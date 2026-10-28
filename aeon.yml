@@ -161,6 +161,7 @@ skills:
   submit-hook: { enabled: false, schedule: "workflow_dispatch", var: "" } # submit a deployed Uniswap v4 hook to the univ4-hooks registry. var: hook address; empty = latest live deploy
   video-script: { enabled: false, schedule: "workflow_dispatch", var: "" } # receipts-first, recording-ready video script. var: <source> [--minutes N]
   weekly-aeoncard: { enabled: false, schedule: "workflow_dispatch", var: "" } # weekly token-consumption recap card (SVG) from memory/token-usage.csv. var: window + delivery control
+  bounty-hunter: { enabled: true, schedule: "0 12 * * *" }
 
   # --- Fallback (must be last) ---
   heartbeat: { enabled: true, schedule: "0 8 * * *", var: "" } # ambient fleet-health check (default) — surfaces anything worth attention. var: empty=ambient check | <area>=ambient focused on that area | brief[:<area>]=priority brief (3 things to focus on, why now, what moved; folds in priority-brief)
@@ -220,8 +221,7 @@ chains:
     max_dispatches: 5
     steps:
       - { skill: feature, var: "$chain_target" }
-      - { skill: pr-review, var: "$feature_pr", consume: [feature] }
-
+      - { skill: pr-review, var: "$feature_pr", consume: [ feature ] }
   # morning-digest:
   #   schedule: "0 7 * * *"
   #   on_error: fail-fast
@@ -229,17 +229,17 @@ chains:
   #     - { parallel: [token-movers, github-trending] }
   #     - { skill: digest, consume: [token-movers, github-trending] }
 
-# Default model for all skills. Override per-run via workflow_dispatch.
-# Options: claude-sonnet-5-5, claude-opus-5-5, claude-haiku-5-5
-# (older claude-sonnet-5 / claude-opus-4-8 still accepted)
-# (Grok harness model: grok-4.7, the flagship reasoning model and grok's current
-#  default, run with --no-subagents in CI; grok-4.6 is also offered, and an existing
-#  grok-4.5 pin is still accepted on an X-account login. grok-4.7 is the gateway
-#  default too. The older coding ids (grok-build-0.1, grok-composer-2.5-fast,
-#  grok-4.3) are gateway-only, reachable via XAI_API_KEY + the GROK_MODEL var.)
-# The non-claude harnesses use their OWN model ids (codex openai/*, kimi moonshotai/*,
-# vibe mistralai/*, pi deepseek/*) — surfaced in the dashboard picker per harness; see
-# docs/harnesses.md. The value below only applies to the claude/grok harnesses.
+  # Default model for all skills. Override per-run via workflow_dispatch.
+  # Options: claude-sonnet-5-5, claude-opus-5-5, claude-haiku-5-5
+  # (older claude-sonnet-5 / claude-opus-4-8 still accepted)
+  # (Grok harness model: grok-4.7, the flagship reasoning model and grok's current
+  #  default, run with --no-subagents in CI; grok-4.6 is also offered, and an existing
+  #  grok-4.5 pin is still accepted on an X-account login. grok-4.7 is the gateway
+  #  default too. The older coding ids (grok-build-0.1, grok-composer-2.5-fast,
+  #  grok-4.3) are gateway-only, reachable via XAI_API_KEY + the GROK_MODEL var.)
+  # The non-claude harnesses use their OWN model ids (codex openai/*, kimi moonshotai/*,
+  # vibe mistralai/*, pi deepseek/*) — surfaced in the dashboard picker per harness; see
+  # docs/harnesses.md. The value below only applies to the claude/grok harnesses.
 model: claude-sonnet-5-5
 
 # Agent harness — which coding-agent CLI runs your skills.
@@ -259,7 +259,7 @@ model: claude-sonnet-5-5
 # Override per-skill with `harness: "<name>"` in the skill entry, or per-run via
 # the workflow_dispatch `harness` input. Default stays claude — everything
 # already configured keeps working unchanged.
-harness: claude
+harness: pi
 
 # AI Gateway — route Claude Code requests through an LLM provider.
 #
