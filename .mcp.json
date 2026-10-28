@@ -1,0 +1,9 @@
+{
+  "mcpServers": {
+    "taskbounty": {
+      "type": "http",
+      "url": "https://www.task-bounty.com/api/mcp/v1",
+      "env": { "TASKBOUNTY_API_KEY": "${TASKBOUNTY_API_KEY}" }
+    }
+  }
+}
