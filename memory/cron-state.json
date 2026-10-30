@@ -13,14 +13,14 @@
   },
   "heartbeat": {
     "last_dispatch": "2026-10-30T08:54:05Z",
-    "last_status": "dispatched",
+    "last_status": "success",
     "last_failed": "2026-10-28T15:30:35Z",
-    "total_runs": 3,
-    "total_successes": 2,
+    "total_runs": 4,
+    "total_successes": 3,
     "total_failures": 1,
     "consecutive_failures": 0,
-    "success_rate": 0.67,
+    "success_rate": 0.75,
     "last_error": "No API key found for openrouter.  Use /login to log into a provider via OAuth or API key. See:   /opt/hostedtoolcache/node/22.23.3/x64/lib/node_modules/@earendil-works/pi-coding-agent/docs/providers.m",
-    "last_success": "2026-10-29T12:49:46Z"
+    "last_success": "2026-10-30T08:54:36Z"
   }
 }
