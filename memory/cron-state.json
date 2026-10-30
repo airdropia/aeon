@@ -1,7 +1,7 @@
 {
   "bounty-hunter": {
-    "last_dispatch": "2026-10-30T02:29:33Z",
-    "last_status": "success",
+    "last_dispatch": "2026-10-30T08:54:05Z",
+    "last_status": "dispatched",
     "last_failed": "2026-10-28T19:03:18Z",
     "total_runs": 10,
     "total_successes": 8,
@@ -12,8 +12,8 @@
     "last_success": "2026-10-30T02:29:57Z"
   },
   "heartbeat": {
-    "last_dispatch": "2026-10-29T12:49:12Z",
-    "last_status": "success",
+    "last_dispatch": "2026-10-30T08:54:05Z",
+    "last_status": "dispatched",
     "last_failed": "2026-10-28T15:30:35Z",
     "total_runs": 3,
     "total_successes": 2,
