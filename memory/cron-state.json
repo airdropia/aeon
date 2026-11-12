@@ -1,7 +1,7 @@
 {
   "bounty-hunter": {
-    "last_dispatch": "2026-11-11T18:04:16Z",
-    "last_status": "success",
+    "last_dispatch": "2026-11-12T00:33:23Z",
+    "last_status": "dispatched",
     "last_failed": "2026-10-28T19:03:18Z",
     "total_runs": 57,
     "total_successes": 55,
