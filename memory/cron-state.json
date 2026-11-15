@@ -1,15 +1,15 @@
 {
   "bounty-hunter": {
     "last_dispatch": "2026-11-15T06:35:42Z",
-    "last_status": "dispatched",
+    "last_status": "success",
     "last_failed": "2026-10-28T19:03:18Z",
-    "total_runs": 70,
-    "total_successes": 68,
+    "total_runs": 71,
+    "total_successes": 69,
     "total_failures": 2,
     "consecutive_failures": 0,
     "success_rate": 0.97,
     "last_error": "Warning: Model \"group/personal-cc\" not found for provider \"openrouter\". Using custom model id. No API key found for openrouter.  Use /login to log into a provider via OAuth or API key. See:   /opt/hos",
-    "last_success": "2026-11-15T00:13:15Z"
+    "last_success": "2026-11-15T06:36:11Z"
   },
   "heartbeat": {
     "last_dispatch": "2026-11-14T09:29:26Z",
